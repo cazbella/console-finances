@@ -87,21 +87,39 @@ var finances = [
   ['Feb-2017', 671099],
 ];
 
-// above is the financial data
+//calculate the total number of months in the dataset. Need to use.length property here. 
 
-// Below are the items that should be seen in the console
+var totalMonths = finances.length;
 
-//Application calculates the total number of months in the dataset
+//calculates the net total amount of Profit/Losses over the entire period.
+//I need to loop over the data for this but need to find out how. 
 
-//Application calculates the net total amount of Profit/Losses over the entire period
+var netTotal = 0
 
-//Application calculates the average of the changes in Profit/Losses over the entire period
+//must initialise this to 0, meaning there are no changes that should be taken into account at the beginning of the calculation.
+
+//calculate the average of the changes in Profit/Losses over the entire period (provided in readme, substituted in variables)
+// You will need to track what the total change in profits is from month to month and then find the average.
+
+var averageChange = (netTotal/(totalMonths- 1));
+
+// will need
+
+var totalChange 
+//to sum up all individual changes- accumulates the month-to-month differences, so can find the average change and identify the months with the greatest increase and decrease in Profit/Losses - focuses on the change rather than the final net amount.
 
 //Application calculates the greatest increase in Profit/Losses over the entire period (Date and Amount)
 
-//Application calculates the greatest decrease in Profit/Losses over the entire period (Date and Amount)
+var greatestIncrease =
 
-//Application prints the above Financial Analysis calculations to the console</p>
+//calculate the greatest decrease in Profit/Losses over the entire period (Date and Amount)
+
+var greatestDecrease =
+
+will also need 
+
+
+
 
 //overall - it's a financial analysis and should look like this 
 //Financial Analysis 
@@ -112,23 +130,6 @@ var finances = [
 // Greatest Increase in Profits/Losses: Feb-2012 ($1926159)
 // Greatest Decrease in Profits/Losses: Sep-2013 ($-2196167)
 
-//so there should be potentially these variables
-//Total months remember camelCase (totalMonths)
-//total(money,Gross?)
-//total profit(net)
-//average change
-//greatest increase
-//greatest decrease
-//(You will need to track what the total change in Profit/Losses are from month to month and then find the average.
-//(Total/(Number of months - 1)))
-
-//from readme Your task is to write JavaScript code that analyzes the records to calculate each of the following:
-
-
-// The total number of months included in the dataset.
-
-
-// The net total amount of Profit/Losses over the entire period.
 
 
 // The average of the changes in Profit/Losses over the entire period.
@@ -142,3 +143,7 @@ var finances = [
 
 
 // The greatest decrease in Profit/Losses (date and amount) over the entire period.
+
+console.log ("Financial Analysis");
+console.log ("--------------------------")
+console.log("Total months: " + totalMonths);
