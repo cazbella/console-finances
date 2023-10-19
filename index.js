@@ -92,31 +92,38 @@ var finances = [
 var totalMonths = finances.length;
 
 //calculates the net total amount of Profit/Losses over the entire period.
-//I need to loop over the data for this but need to find out how. 
 
 var netTotal = 0
+for (var i = 0; i < finances.length; i++) {
+  netTotal += finances[i][1];
+}
+
+//+= means add the value of left side to right side then assign it back to the variable. 
+
+
+//[1] accesses the next number along as it loops. this is for comparison. 
 
 //must initialise this to 0, meaning there are no changes that should be taken into account at the beginning of the calculation.
 
-//calculate the average of the changes in Profit/Losses over the entire period (provided in readme, substituted in variables)
+//NEXT calculate the average of the changes in Profit/Losses over the entire period (provided in readme, substituted in variables)
 // You will need to track what the total change in profits is from month to month and then find the average.
 
-var averageChange = (netTotal/(totalMonths- 1));
+var totalChange = 0 //stores cumulative change in the profit and loss. 
 
-// will need
+var averageChange = (totalChange/(totalMonths- 1));
 
-var totalChange 
+// will need to calculate change from one month to the next. 
+
+// var totalChange = 0
 //to sum up all individual changes- accumulates the month-to-month differences, so can find the average change and identify the months with the greatest increase and decrease in Profit/Losses - focuses on the change rather than the final net amount.
 
 //Application calculates the greatest increase in Profit/Losses over the entire period (Date and Amount)
 
-var greatestIncrease =
+// var greatestIncrease =
 
 //calculate the greatest decrease in Profit/Losses over the entire period (Date and Amount)
 
-var greatestDecrease =
-
-will also need 
+// var greatestDecrease =
 
 
 
@@ -147,3 +154,4 @@ will also need
 console.log ("Financial Analysis");
 console.log ("--------------------------")
 console.log("Total months: " + totalMonths);
+console.log("Total: $" + netTotal);
