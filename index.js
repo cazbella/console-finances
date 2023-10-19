@@ -108,10 +108,43 @@ for (var i = 0; i < finances.length; i++) {
 //NEXT calculate the average of the changes in Profit/Losses over the entire period (provided in readme, substituted in variables)
 // You will need to track what the total change in profits is from month to month and then find the average.
 
-var totalChange = 0 //stores cumulative change in the profit and loss. 
+var totalChange = 0 //stores change as we add up in the profit and loss. 
+var previousAmount = finances[0][1];
+var greatest = 0;
+var greatestDate;
+var lowest = 0;
+var lowestDate;
 
-var averageChange = (totalChange/(totalMonths- 1));
+for (var i = 1; i < finances.length; i++) {
 
+var change = finances[i][1]-previousAmount; 
+
+totalChange += change;
+
+
+previousAmount=finances[i][1];
+
+
+//console.log(change)
+if(greatest < change){
+  greatest = change
+  greatestDate = finances[i][0]
+}
+
+if(lowest > change){
+  lowest = change 
+  lowestDate = finances[i][0]
+}
+
+}
+
+console.log(lowestDate + " " + lowest);
+
+console.log(greatestDate +" " + greatest);
+
+var averageChange = totalChange/(totalMonths- 1);
+//console.log(Math.floor(averageChange/100))
+//console.log("average change" + averageChange.toFixed(2));
 // will need to calculate change from one month to the next. 
 
 // var totalChange = 0
