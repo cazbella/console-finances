@@ -1,35 +1,31 @@
 # console-finances
-Module 04 assignment.
 
-# bootstrap-portfolio
-
-This Bootstrap Portfolio showcases my recently aquired skills in HTML, CSS and Bootstrap. It also provides details of some of my projects and achievements to date. 
+This project is designed to solve the questions set out in the Module 4 assignment. It primarily uses JavaScript.  
 
 ## Description
 
-My page shows how I can utilise the following bootstrap elements; navbar, jumbotron, grid containing cards, heading sections, links and finally a footer. To implement this the basis of my code is taken from bootstrap. 
+The project 
 
-Please find a screenshot below of the initial landing area. 
+Please find a screenshot below of the console running the JavaScript. 
 
-![Screenshot of landing area](images/Screenshot-landing-area.png)
+![Screenshot of landing area](images/Screenshot-console-finances.png)
 
-I used CSS and some further HTML classes to customise my webpage. 
 
-It aims to show you my current skills in building and customising a webpage using Bootstrap and CSS, whilst implementing the requirements of the Module 03 Challenge in the EdX Frontend Web Development Bootcamp. 
+It aims to show you my current skills in using the JavaScript that we have learned on the course so far, solving the requirements of the Module 04 Challenge in the EdX Frontend Web Development Bootcamp. 
 
-My biggest challenge was formatting this page in order to give it the uniform spacing and borders I desired. I feel that I have almost achieved this as I would have liked. I achieved the current spacing and uniform margins by using nested containers. I also struggled to format the image in the jumbotron as I would have liked, hence the media query for this. 
+My biggest challenge was solving the last two elements of the assignment. I have completed a JavaScript course previously, but I had not encointered some of the syntax required. 
 
 ## Usage
 
-Please use the links or scroll to navigate the sections of the page and to judge whether my implemetation of all the required elements has been achieved. I have tried to ensure that all the links are functional and navigate to the correct areas of the webpage or other webpages. The page should loosely mimic my original portfolio, found by clicking the links on the 2nd card in the 'Work' section entitled 'Portfolio Project'. 
+Please open the HTML file in the browser and inspect the page. Then please view the console. You should see the following as the solution to the assignment; 
 
-![Screenshot of work section](images/Screenshot-work-section.png)
+![Screenshot of console](images/Screenshot-console.png)
 
+The JavaScript file that logs this code contains comments. The tutor was asked if this was good practice and the advice given was that as I am new to web development, there should be lots of comments at this stage. Hopefully the comments and the commits explain the process I followed to complete the assignment. I have also made notes here to help me remember the process and what the syntax means. 
 
 ## References
 
-I have used the bootstrap code for the elements on my page. 
-Styling the elements has been some trial and error, but I have used the following sources too; ask BCS, Stack Overflow and Get Bootstrap. I also used the 'Ask the Class' channel in slack to discuss issues I was having in GitHub. I have watched a series of videos in youtube about bootstrap too. These can be found at 'Net Ninja' in youtube. 
+I completed the Northcoders pre-work JavaScript module, so I had a foundation knowledge of some of the concepts covered. I have used google a lot this week, including Stack Overflow, W3 schools and MDN web docs. We also used the 1:1 tutor session this week to look at assignment 4. 
 
 
 ## Contributing

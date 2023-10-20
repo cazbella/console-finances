@@ -91,7 +91,7 @@ var finances = [
 
 var totalMonths = finances.length;
 
-//calculates the net total amount of Profit/Losses over the entire period.
+//calculate the net total amount of Profit/Losses over the entire period. We need a for loop here. 
 
 var netTotal = 0
 for (var i = 0; i < finances.length; i++) {
@@ -100,66 +100,76 @@ for (var i = 0; i < finances.length; i++) {
 
 //+= means add the value of left side to right side then assign it back to the variable. 
 
-
-//[1] accesses the next number along as it loops. this is for comparison. 
+//[1] accesses the next number along as it loops (strings and arrays are zero indexed). This is for comparison. 
 
 //must initialise this to 0, meaning there are no changes that should be taken into account at the beginning of the calculation.
 
+//A for loop is used to iterate through each month's finances, and it adds up these values to netTotal. This gives the overall profit or loss over the entire array.
+
 //NEXT calculate the average of the changes in Profit/Losses over the entire period (provided in readme, substituted in variables)
+
 // You will need to track what the total change in profits is from month to month and then find the average.
 
 var totalChange = 0 //stores change as we add up in the profit and loss. 
-var previousAmount = finances[0][1];
-var greatest = 0;
-var greatestDate;
-var lowest = 0;
-var lowestDate;
+var previousAmount = finances[0][1]; //stores the financial value of the previous month, initially set to the first month's value.
+var greatestChange = 0; //stores the greatest increase in profit/loss.
+var greatestDate; //stores the month associated with the greatest increase in profit/loss.
+var lowestChange = 0;//as above but lowest
+var lowestDate;//as above but lowest
 
+//
 for (var i = 1; i < finances.length; i++) {
 
-var change = finances[i][1]-previousAmount; 
+var currentChange = finances[i][1]-previousAmount; 
 
-totalChange += change;
+totalChange += currentChange;
 
 
 previousAmount=finances[i][1];
 
+//to sum up all individual changes- accumulates the month-to-month differences, so can find the average change and identify the months with the greatest increase and decrease in Profit/Losses - focuses on the change rather than the final net amount.
 
-//console.log(change)
-if(greatest < change){
-  greatest = change
+// for loop is used to calculate the change in profit/loss from one month to the next, and this change is stored in totalChange. This syntax is slightly different to how Dan showed us. Starts at position one so we can compare the 1st month to the one before. 
+
+// The average change is calculated by dividing totalChange by the total number of months minus 1 (as you don't need to calculate a change for the first month).
+
+//NEXT calculate greatest increase in Profit/Losses (date and amount) over the entire period.
+
+if(greatestChange < currentChange){
+  greatestChange = currentChange
   greatestDate = finances[i][0]
 }
 
-if(lowest > change){
-  lowest = change 
+//NEXT calculate the greatest decrease in Profit/Losses over the entire period (Date and Amount)
+if(lowestChange > currentChange){
+  lowestChange = currentChange 
   lowestDate = finances[i][0]
 }
 
 }
 
-console.log(lowestDate + " " + lowest);
 
-console.log(greatestDate +" " + greatest);
+// Variables greatestChange and lowestChange are used to keep track of the greatest increase and decrease in profit/loss, respectively.
+// greatestDate and lowestDate store the corresponding month names.
+// Inside the same for loop used for average change, the code checks if the current change is greater than the current greatestChange. If so, it updates greatestChange and greatestDate.
+// also, it checks if the current change is less than the current lowestChange and updates lowestChange and lowestDate.
+
+//NEXT calculate average of the changes in Profit/Losses over the entire period.
+
+// You will need to track what the total change in Profit/Losses are from month to month and then find the average.
+// (Total/(Number of months - 1))
 
 var averageChange = totalChange/(totalMonths- 1);
-//console.log(Math.floor(averageChange/100))
-//console.log("average change" + averageChange.toFixed(2));
-// will need to calculate change from one month to the next. 
-
-// var totalChange = 0
-//to sum up all individual changes- accumulates the month-to-month differences, so can find the average change and identify the months with the greatest increase and decrease in Profit/Losses - focuses on the change rather than the final net amount.
-
-//Application calculates the greatest increase in Profit/Losses over the entire period (Date and Amount)
-
-// var greatestIncrease =
-
-//calculate the greatest decrease in Profit/Losses over the entire period (Date and Amount)
-
-// var greatestDecrease =
 
 
+console.log ("Financial Analysis");
+console.log ("--------------------------")
+console.log("Total Months: " + totalMonths);
+console.log("Total: $" + netTotal);
+console.log("Average Change: $" + averageChange.toFixed(2)); //to.fixed(2) makes answer to 2 decimal places.
 
+console.log("Greatest Increase in Profits/Losses: " + greatestDate + " ($" + greatestChange + ")");
+console.log("Greatest Decrease in Profits/Losses: " + lowestDate + " ($" + lowestChange + ")");
 
 //overall - it's a financial analysis and should look like this 
 //Financial Analysis 
@@ -169,22 +179,3 @@ var averageChange = totalChange/(totalMonths- 1);
 // Average Change: -2315.12
 // Greatest Increase in Profits/Losses: Feb-2012 ($1926159)
 // Greatest Decrease in Profits/Losses: Sep-2013 ($-2196167)
-
-
-
-// The average of the changes in Profit/Losses over the entire period.
-
-// You will need to track what the total change in Profit/Losses are from month to month and then find the average.
-// (Total/(Number of months - 1))
-
-
-
-// The greatest increase in Profit/Losses (date and amount) over the entire period.
-
-
-// The greatest decrease in Profit/Losses (date and amount) over the entire period.
-
-console.log ("Financial Analysis");
-console.log ("--------------------------")
-console.log("Total months: " + totalMonths);
-console.log("Total: $" + netTotal);
